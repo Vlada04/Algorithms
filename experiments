@@ -1,0 +1,43 @@
+import numpy as np
+import time
+
+import selection_sort
+import shell_sort
+import insertion_sort
+import merge_sort
+
+def experiments(arg):
+    print("First experiment")
+
+    for power in range(7, 16):
+        for _ in range(5):
+            start_time = time.time()
+            example = np.random.randint(1, 1000, 2**power)
+        exp = arg.sort(example)
+        print(exp[1], time.time() - start_time)
+    
+    print(" ")
+    print("Second experiment")
+    for power in range(7, 16):
+        start_time2 = time.time()
+        example2 = list(range(1, 2**power + 1))
+        exp2 = arg.sort(example2)
+        print(exp2[1], time.time() - start_time2)
+
+    print(" ")
+    print("Third experiment")
+    for power in range(7, 16):
+        start_time3 = time.time()
+        example3 = list(range(1, 2**power + 1))[::-1]
+        exp3 = arg.sort(example3)
+        print(exp3[1], time.time() - start_time3)
+
+    print(" ")
+    print("Fourth experiment")
+    for power in range(7, 16):
+        for _ in range(3):
+            start_time4 = time.time()
+            example4 = np.random.randint(1, 4, 2**power)
+            exp4 = arg.sort(example4)
+        print(exp4[1], time.time() - start_time4)
+    return "End of experiment"
