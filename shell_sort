@@ -1,0 +1,22 @@
+def sort(array):
+    comparisons = 0
+
+    lenght = len(array)
+    h = lenght // 2
+    while h > 0:
+        for i in range(h, lenght):
+
+            comparisons += 1
+
+            t = array[i]
+            j = i
+            while j >= h and array[j - h] > t:
+
+                comparisons += 1
+
+                array[j] = array[j - h]
+                j -= h
+ 
+            array[j] = t
+        h = h // 2
+    return array, comparisons
