@@ -13,4 +13,3 @@ def sort(arr):
         arr[j + 1] = key
         
     return arr, comparisons
- 
